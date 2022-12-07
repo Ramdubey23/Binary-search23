@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+  int n;
+  cin>>n;
+  int arr[n],beg=0,end=n-1,flag=0,mid,ans,i;
+  for(i=0;i<n;i++)
+  cin>>arr[i];
+  int key;
+  cin>>n;
+  while(beg<=end)
+  {
+mid=beg+(end-beg)/2;
+if(arr[mid]==key)
+{
+ans=mid+1;
+flag=1;
+break;
+}
+else if(arr[mid]<key)
+end=mid-1;
+else
+beg=mid+1;
+  
+  if(flag==0)\
+  cout<<"element is not found";
+  else
+  cout<<"element is present"<<ans;
+    return 0;
+}
+}
